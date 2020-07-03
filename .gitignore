@@ -1,0 +1,14 @@
+# Created by .ignore support plugin (hsz.mobi)
+.idea/.gitignore
+.idea/WebSocket.iml
+.idea/dictionaries/
+.idea/encodings.xml
+.idea/inspectionProfiles/
+.idea/misc.xml
+.idea/modules.xml
+.idea/vcs.xml
+aruba-iot-protobuf-spec-AP/
+telemetry_view.pyc
+venv/
+venv27/
+*.pyc
