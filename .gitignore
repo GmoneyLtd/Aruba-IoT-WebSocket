@@ -9,6 +9,5 @@
 .idea/vcs.xml
 aruba-iot-protobuf-spec-AP/
 telemetry_view.pyc
-venv/
-venv27/
 *.pyc
+.gitignore
