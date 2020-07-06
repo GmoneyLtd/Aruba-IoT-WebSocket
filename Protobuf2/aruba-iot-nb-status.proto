@@ -1,0 +1,20 @@
+syntax = "proto2";
+
+package aruba_telemetry;
+
+enum statusValue {
+    deviceDisconnected      = 0;
+    inactivityTimeout       = 1;
+}
+
+message Status {
+    // Refers to the MAC address of the end device. Typically a 6 byte BLE MAC or 8 byte Zigbee MAC
+	optional bytes          deviceMac       = 1;
+
+	// Status enum from above
+	optional statusValue    status          = 2;
+
+	// Optional additional freeform information
+	optional string         statusString    = 3;
+ 
+}

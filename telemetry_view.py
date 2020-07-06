@@ -1,3 +1,11 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# @Time    : 2020/7/6 5:30 PM
+# @Author  : Jinlin
+# @File    : telemetry.py
+# @Project : WebSocket
+
+
 from tabulate import tabulate
 
 

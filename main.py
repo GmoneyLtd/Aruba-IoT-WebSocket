@@ -1,3 +1,11 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# @Time    : 2020/7/6 5:30 PM
+# @Author  : Jinlin
+# @File    : main.py
+# @Project : WebSocket
+
+
 from flask import Flask, request, abort
 from geventwebsocket.handler import WebSocketHandler
 from gevent.pywsgi import WSGIServer
