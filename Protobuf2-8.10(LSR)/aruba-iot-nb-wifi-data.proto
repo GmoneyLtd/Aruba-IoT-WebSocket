@@ -1,3 +1,5 @@
+//  (C) Copyright [2018-2021] Hewlett Packard Enterprise Development LP
+
 syntax = "proto2";
 
 package aruba_telemetry;

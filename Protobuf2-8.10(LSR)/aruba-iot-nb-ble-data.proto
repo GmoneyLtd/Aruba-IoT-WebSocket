@@ -1,3 +1,5 @@
+//  (C) Copyright [2018-2021] Hewlett Packard Enterprise Development LP
+
 syntax = "proto2";
 
 package aruba_telemetry;
@@ -23,6 +25,23 @@ enum BleFrameType {
 }
 
 
+// Address type for the devices forwarded by the Aruba WLAN
+// The raw values match those in the Bluetooth Standard.
+enum MacAddrType {
+    // Public MAC Address
+    addr_type_public                    = 0;
+
+    // Static MAC Address
+    addr_type_static                    = 1;
+    
+    // Private Non-Resolvable MAC Address
+    addr_type_private_non_resolvable    = 2;
+    
+    // Private Resolvable MAC Address
+    addr_type_private_resolvable        = 3;
+}
+
+
 message BleData {
     // Advertisement address of the sender
     optional bytes          mac             = 1;
@@ -35,4 +54,10 @@ message BleData {
     
     // signal strength in dBm
     optional sint32         rssi            = 4;
+
+    // Mac Address Type
+    optional MacAddrType    addrType        = 5;
+
+    // APB mac address
+    optional bytes          apbMac          = 6;
 }

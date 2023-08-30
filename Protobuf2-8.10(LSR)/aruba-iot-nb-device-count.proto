@@ -1,9 +1,13 @@
+//  (C) Copyright [2018-2021] Hewlett Packard Enterprise Development LP
+
 syntax = "proto2";
 
 package aruba_telemetry;
 
 import "aruba-iot-types.proto";
 
+// Used for reporting counts of devices corresponding
+// to each device class label in IoT transport profiles
 message DeviceCount {
     optional int32 dev_unclassified         = 1;
     optional int32 dev_arubaBeacon          = 2;
@@ -25,4 +29,11 @@ message DeviceCount {
     optional int32 dev_wifiUnassocSta       = 18;
     optional int32 dev_mysphera             = 19;
     optional int32 dev_sBeacon              = 20;
+    optional int32 dev_onity                = 21;
+    optional int32 dev_minew                = 22;
+    optional int32 dev_google               = 23;
+    optional int32 dev_polestar             = 24;
+    optional int32 dev_blyott               = 25;
+    optional int32 dev_diract               = 26;
+    optional int32 dev_gwahygiene           = 27;
 }

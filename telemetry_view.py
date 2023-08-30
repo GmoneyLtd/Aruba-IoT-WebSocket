@@ -7,7 +7,7 @@
 
 
 from tabulate import tabulate
-
+from datetime import datetime
 
 def telemetry_view(kw):
     telemetry = ['meta','reporter','reported','results','characteristics','bleData','wifiData','devCount','status']
@@ -32,3 +32,27 @@ def telemetry_view(kw):
     print (tabulate(table, telemetry, tablefmt='grid'))
     for index in range(len(iot_headers)):
         print (tabulate(iot_rows[index],iot_headers[index],  tablefmt='grid'))
+
+
+# 变更可迭代对象中特定key的值为日期格式(时间戳--->日期)
+def process_iterable(iterable, keys):
+    if isinstance(iterable, dict):
+        for key in list(iterable.keys()):
+            value = iterable[key]
+            if isinstance(value, dict):
+                process_iterable(value, keys)
+            elif isinstance(value, list):
+                process_iterable(value, keys)
+            elif key in keys and isinstance(value, int):
+                try:
+                    iterable[key] = datetime.fromtimestamp(value).strftime("%Y-%m-%d %H:%M:%S")
+                except ValueError:
+                    pass
+    elif isinstance(iterable, list):
+        for item in iterable:
+            if isinstance(item, dict):
+                process_iterable(item, keys)
+            elif isinstance(item, list):
+                process_iterable(item, keys)
+
+    return iterable

@@ -1,9 +1,13 @@
+//  (C) Copyright [2018-2021] Hewlett Packard Enterprise Development LP
+
 syntax = "proto2";
 
 package aruba_telemetry;
 
 import "aruba-iot-types.proto";
 
+// Values correspond to the different action results/statuses 
+// as part of the BLE SB API interactions
 enum ActionStatus {
     failureGeneric              = 0;
     success                     = 1;
@@ -20,6 +24,7 @@ enum ActionStatus {
     characteristicNotFound      = 12;
     invalidRequest              = 13;
     gattError                   = 14;
+    encryptionFailed            = 15;
 }
 
 message ActionResult {
@@ -39,4 +44,10 @@ message ActionResult {
     
     // Optional additional freeform information
     optional string         statusString    = 5;
+
+    // Bonding key is present when devices are bonded together
+    optional BleBondingKey  bondingKey      = 6;
+
+    // APB mac address
+    optional bytes          apbMac          = 7;
 }
