@@ -10,7 +10,7 @@ from tabulate import tabulate
 from datetime import datetime
 
 def telemetry_view(kw):
-    telemetry = ['meta','reporter','reported','results','characteristics','bleData','wifiData','devCount','status']
+    telemetry = ['meta','reporter','reported','results','characteristics','bleData','wifiData','devCount','status','zigbee','nbSData','apHealth']
     table = []
     table_row = []
     iot_headers = []

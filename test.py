@@ -1,3 +1,5 @@
+# 可迭代对象处理过程中的返回值问题
+
 from datetime import datetime
 
 def process_iterable(iterable, keys):
